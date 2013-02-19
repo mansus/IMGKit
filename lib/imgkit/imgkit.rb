@@ -59,7 +59,7 @@ class IMGKit
   end
 
   def executable
-    default = IMGKit.configuration.wkhtmltoimage
+    default = IMGKit.configuration.wkhtmltoimage.to_s
     return default if default !~ /^\// # its not a path, so nothing we can do
     if File.exist?(default)
       default
